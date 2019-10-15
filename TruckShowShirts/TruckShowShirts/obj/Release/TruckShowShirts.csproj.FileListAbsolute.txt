@@ -1,0 +1,10 @@
+C:\Projects\TruckShowShirts\TruckShowShirts\bin\Release\TruckShowShirts.exe.config
+C:\Projects\TruckShowShirts\TruckShowShirts\bin\Release\TruckShowShirts.exe
+C:\Projects\TruckShowShirts\TruckShowShirts\bin\Release\TruckShowShirts.pdb
+C:\Projects\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.TruckShowShirts.resources
+C:\Projects\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.Properties.Resources.resources
+C:\Projects\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.csproj.GenerateResource.cache
+C:\Projects\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.csproj.CoreCompileInputs.cache
+C:\Projects\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.exe
+C:\Projects\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.pdb
+C:\Projects\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.csprojAssemblyReference.cache
