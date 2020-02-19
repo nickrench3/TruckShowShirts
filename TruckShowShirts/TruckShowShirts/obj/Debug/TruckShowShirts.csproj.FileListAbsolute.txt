@@ -8,3 +8,13 @@ C:\Projects\TruckShowShirts\TruckShowShirts\obj\Debug\TruckShowShirts.csproj.Cor
 C:\Projects\TruckShowShirts\TruckShowShirts\obj\Debug\TruckShowShirts.exe
 C:\Projects\TruckShowShirts\TruckShowShirts\obj\Debug\TruckShowShirts.pdb
 C:\Projects\TruckShowShirts\TruckShowShirts\obj\Debug\TruckShowShirts.TruckShowShirts.resources
+C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\bin\Debug\TruckShowShirts.exe.config
+C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\bin\Debug\TruckShowShirts.exe
+C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\bin\Debug\TruckShowShirts.pdb
+C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Debug\TruckShowShirts.csprojAssemblyReference.cache
+C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Debug\TruckShowShirts.TruckShowShirts.resources
+C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Debug\TruckShowShirts.Properties.Resources.resources
+C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Debug\TruckShowShirts.csproj.GenerateResource.cache
+C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Debug\TruckShowShirts.exe
+C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Debug\TruckShowShirts.pdb
+C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Debug\TruckShowShirts.Login.resources

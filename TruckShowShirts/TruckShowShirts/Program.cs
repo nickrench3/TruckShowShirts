@@ -16,7 +16,7 @@ namespace TruckShowShirts
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TruckShowShirts());
+            Application.Run(new Login());
         }
     }
 }
