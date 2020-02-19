@@ -19,6 +19,19 @@ namespace TruckShowShirts
         public TruckShowShirts()
         {
             InitializeComponent();
+            con.Open();
+            cmd = new SqlCommand("SELECT TOP 1 * FROM LoginEventLog ORDER BY ExecutionTime desc", con);
+            SqlDataReader dr2 = cmd.ExecuteReader();
+            if (dr2.Read())
+            {
+                string userName = (dr2["username"].ToString());
+                if (userName != "nickrench3")
+                {
+                    tabControl1.TabPages.Remove(tabPage3);
+                }
+
+            }
+            con.Close();
         }
 
         private void EnterButton1_Click(object sender, EventArgs e)
