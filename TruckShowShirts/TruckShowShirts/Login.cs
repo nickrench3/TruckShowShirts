@@ -13,8 +13,8 @@ namespace TruckShowShirts
 {
     public partial class Login : Form
     {
-        private SqlConnection con = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS;Initial Catalog=Savings;Integrated Security=True;Pooling=False");
-        private SqlConnection con2 = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS;Initial Catalog=TruckShow;Integrated Security=True;Pooling=False");
+        private SqlConnection conSecure = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS;Initial Catalog=Security;Integrated Security=True;Pooling=False");
+        private SqlConnection con = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS;Initial Catalog=TruckShow;Integrated Security=True;Pooling=False");
         private SqlCommand cmd;
 
         public Login()
@@ -24,17 +24,15 @@ namespace TruckShowShirts
 
         private void loginButton_Click(object sender, EventArgs e)
         {
-            con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT UserID FROM [dbo].[Login] WHERE LoginName='" + userNameTextBox.Text + "' AND PasswordHash=HASHBYTES('SHA2_512', N'" + passwordTextBox.Text + "') AND Added='Y'", con);
+            conSecure.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT UserID FROM [dbo].[Login] WHERE LoginName='" + userNameTextBox.Text + "' AND PasswordHash=HASHBYTES('SHA2_512', N'" + passwordTextBox.Text + "') AND Added='Y'", conSecure);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows.Count == 1)
             {
-                con.Close();
-                con2.Open();
-                cmd = new SqlCommand("INSERT LOGINEVENTLOG VALUES('" + userNameTextBox.Text.Trim() + "', '" + DateTime.Now + "')", con2);
+                cmd = new SqlCommand("INSERT LOGINEVENTLOG VALUES('" + userNameTextBox.Text.Trim() + "', '" + DateTime.Now + "', 'Truck Show Shirts')", conSecure);
                 cmd.ExecuteNonQuery();
-                con2.Close();
+                conSecure.Close();
                 TruckShowShirts ts = new TruckShowShirts();
                 ts.Show();
                 this.Owner = ts;
@@ -44,7 +42,6 @@ namespace TruckShowShirts
             {
                 MessageBox.Show("Your account has not been activated yet or check your username and password", "Error");
             }
-            con.Close();
         }
 
         private void TruckShowShirts_FormClosed(object send, FormClosedEventArgs e)
