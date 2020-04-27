@@ -48,5 +48,13 @@ namespace TruckShowShirts
         {
             this.Close();
         }
+
+        private void registerButton_Click(object sender, EventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+            this.Owner = register;
+            this.Hide();
+        }
     }
 }

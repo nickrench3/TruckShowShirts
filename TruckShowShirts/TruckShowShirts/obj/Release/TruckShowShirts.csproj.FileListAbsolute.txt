@@ -18,3 +18,5 @@ C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowS
 C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.csproj.GenerateResource.cache
 C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.exe
 C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.pdb
+C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.Register.resources
+C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.csproj.CoreCompileInputs.cache
