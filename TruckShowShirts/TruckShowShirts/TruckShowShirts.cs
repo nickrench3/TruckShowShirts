@@ -13,14 +13,15 @@ namespace TruckShowShirts
 {
     public partial class TruckShowShirts : Form
     {
+        private SqlConnection conSecure = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS;Initial Catalog=Security;Integrated Security=True;Pooling=False");
         private SqlConnection con = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS;Initial Catalog=TruckShow;Integrated Security=True;Pooling=False");
         private SqlCommand cmd;
 
         public TruckShowShirts()
         {
             InitializeComponent();
-            con.Open();
-            cmd = new SqlCommand("SELECT TOP 1 * FROM LoginEventLog ORDER BY ExecutionTime desc", con);
+            conSecure.Open();
+            cmd = new SqlCommand("SELECT TOP 1 * FROM LoginEventLog ORDER BY ExecutionTime desc", conSecure);
             SqlDataReader dr2 = cmd.ExecuteReader();
             if (dr2.Read())
             {
@@ -31,7 +32,7 @@ namespace TruckShowShirts
                 }
 
             }
-            con.Close();
+            conSecure.Close();
         }
 
         private void EnterButton1_Click(object sender, EventArgs e)

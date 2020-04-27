@@ -32,16 +32,16 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.loginButton = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.registerButton = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.loginButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // userNameTextBox
             // 
             this.userNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userNameTextBox.Location = new System.Drawing.Point(320, 42);
-            this.userNameTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.userNameTextBox.Name = "userNameTextBox";
             this.userNameTextBox.Size = new System.Drawing.Size(336, 26);
             this.userNameTextBox.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTextBox.Location = new System.Drawing.Point(320, 117);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '●';
             this.passwordTextBox.Size = new System.Drawing.Size(336, 26);
@@ -78,17 +78,17 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
-            // loginButton
+            // registerButton
             // 
-            this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(320, 194);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(340, 62);
-            this.loginButton.TabIndex = 4;
-            this.loginButton.Text = "Login";
-            this.loginButton.UseVisualStyleBackColor = true;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.registerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerButton.Location = new System.Drawing.Point(320, 342);
+            this.registerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.registerButton.Name = "registerButton";
+            this.registerButton.Size = new System.Drawing.Size(340, 62);
+            this.registerButton.TabIndex = 9;
+            this.registerButton.Text = "Register";
+            this.registerButton.UseVisualStyleBackColor = true;
+            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // label3
             // 
@@ -101,17 +101,17 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "------ or you can -------";
             // 
-            // registerButton
+            // loginButton
             // 
-            this.registerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.registerButton.Location = new System.Drawing.Point(320, 342);
-            this.registerButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(340, 62);
-            this.registerButton.TabIndex = 9;
-            this.registerButton.Text = "Register";
-            this.registerButton.UseVisualStyleBackColor = true;
-            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
+            this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButton.Location = new System.Drawing.Point(320, 194);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(4);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(340, 62);
+            this.loginButton.TabIndex = 4;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // Login
             // 
@@ -126,7 +126,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.userNameTextBox);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -141,8 +141,8 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button loginButton;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button registerButton;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button loginButton;
     }
 }
