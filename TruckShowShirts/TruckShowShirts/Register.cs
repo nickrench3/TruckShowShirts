@@ -51,10 +51,5 @@ namespace TruckShowShirts
                 this.Hide();
             }
         }
-
-        private void ExitButton_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }
