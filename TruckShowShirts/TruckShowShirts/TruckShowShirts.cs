@@ -17,6 +17,7 @@ namespace TruckShowShirts
         private SqlConnection con = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS;Initial Catalog=TruckShow;Integrated Security=True;Pooling=False");
         private SqlCommand cmd;
 
+        // Initialize, get the username and check to see if it has Admin access.
         public TruckShowShirts()
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace TruckShowShirts
             conSecure.Close();
         }
 
+        // First enter button to display how many shirts are available
         private void EnterButton1_Click(object sender, EventArgs e)
         {
             StextBox.Clear();
@@ -86,9 +88,9 @@ namespace TruckShowShirts
                 fiveXLtextBox.AppendText(fiveXL);
             }
             con.Close();
-
         }
 
+        // Enter button to update the shirt totals
         private void EnterButton2_Click(object sender, EventArgs e)
         {
             string style = StyleComboBox2.Text;
@@ -139,9 +141,12 @@ namespace TruckShowShirts
             string message = "Shirt totals updated";
             string title = "Truck Show Shirt Update";
             MessageBox.Show(message, title);
-            
+            StyleComboBox2.Text = "";
+            SizeComboBox.Text = "";
+            quantityTextBox.Text = "";
         }
 
+        // Admin enter button to update the total stock of the shirt size
         private void EnterButton3_Click(object sender, EventArgs e)
         {
             string style = StyleComboBox3.Text;
@@ -180,8 +185,12 @@ namespace TruckShowShirts
            string message = "Shirt totals updated";
            string title = "Truck Show Shirt Update";
            MessageBox.Show(message, title);
+           StyleComboBox2.Text = "";
+           SizeComboBox.Text = "";
+           quantityTextBox.Text = "";
         }
 
+        // Clears text on first tab
         private void ClearButton1_Click(object sender, EventArgs e)
         {
             StyleComboBox1.Text = "";
@@ -195,6 +204,7 @@ namespace TruckShowShirts
             fiveXLtextBox.Text = "";
         }
 
+        // Clears text on the second tab
         private void ClearButton2_Click(object sender, EventArgs e)
         {
             StyleComboBox2.Text = "";
@@ -202,6 +212,7 @@ namespace TruckShowShirts
             quantityTextBox.Text = "";
         }
 
+        // Clears text on the third tab
         private void ClearButton3_Click(object sender, EventArgs e)
         {
             StyleComboBox3.Text = "";
