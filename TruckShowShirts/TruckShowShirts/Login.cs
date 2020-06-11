@@ -5,6 +5,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,10 +18,14 @@ namespace TruckShowShirts
         private SqlConnection conSecure = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS01;Initial Catalog=Security;Integrated Security=True;Pooling=False");
         private SqlConnection con = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS01;Initial Catalog=TruckShow;Integrated Security=True;Pooling=False");
         private SqlCommand cmd;
+        private string LastIP = "";
+        private string HostName = "";
 
         public Login()
         {
             InitializeComponent();
+            LastIP = GetLocalIPAddress();
+            HostName = Dns.GetHostName();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
@@ -30,7 +36,7 @@ namespace TruckShowShirts
             sda.Fill(dt);
             if (dt.Rows.Count == 1)
             {
-                cmd = new SqlCommand("INSERT LOGINEVENTLOG VALUES('" + userNameTextBox.Text.Trim() + "', '" + DateTime.Now + "', 'Truck Show Shirts')", conSecure);
+                cmd = new SqlCommand("INSERT LOGINEVENTLOG VALUES('" + userNameTextBox.Text.Trim() + "', '" + DateTime.Now + "', 'Truck Show Shirts', '" + LastIP + "', '" + HostName + "')", conSecure);
                 cmd.ExecuteNonQuery();
                 conSecure.Close();
                 TruckShowShirts ts = new TruckShowShirts();
@@ -55,6 +61,19 @@ namespace TruckShowShirts
             register.Show();
             this.Owner = register;
             this.Hide();
+        }
+
+        private static string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("No network adapters with an IPv4 address in the system!");
         }
     }
 }
