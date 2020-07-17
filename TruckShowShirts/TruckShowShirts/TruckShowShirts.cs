@@ -8,21 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Dynamic;
 
 namespace TruckShowShirts
 {
     public partial class TruckShowShirts : Form
     {
-        private SqlConnection conSecure = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS01;Initial Catalog=Security;Integrated Security=True;Pooling=False");
-        private SqlConnection con = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS01;Initial Catalog=TruckShow;Integrated Security=True;Pooling=False");
+        private SqlConnection con = new SqlConnection("Data Source=NRENTSHLER;Initial Catalog=Test;Integrated Security=True");
         private SqlCommand cmd;
 
         // Initialize, get the username and check to see if it has Admin access.
         public TruckShowShirts()
         {
             InitializeComponent();
-            conSecure.Open();
-            cmd = new SqlCommand("SELECT TOP 1 * FROM LoginEventLog ORDER BY ExecutionTime desc", conSecure);
+            con.Open();
+            cmd = new SqlCommand("SELECT TOP 1 * FROM Security.dbo.LoginEventLog ORDER BY ExecutionTime desc", con);
             SqlDataReader dr2 = cmd.ExecuteReader();
             if (dr2.Read())
             {
@@ -31,25 +31,19 @@ namespace TruckShowShirts
                 {
                     tabControl1.TabPages.Remove(tabPage3);
                 }
-
             }
-            conSecure.Close();
+            con.Close();
         }
 
         // First enter button to display how many shirts are available
         private void EnterButton1_Click(object sender, EventArgs e)
         {
-            StextBox.Clear();
-            MtextBox.Clear();
-            LtextBox.Clear();
-            XLtextBox.Clear();
-            twoXLtextBox.Clear();
-            threeXLtextBox.Clear();
-            fourXLtextBox.Clear();
-            fiveXLtextBox.Clear();
-
+            ClearTextboxes();
+            
             string style = StyleComboBox1.Text;
             style = style.Trim();
+            string Bin;
+
             con.Open();
             cmd = new SqlCommand("SELECT * FROM Shirts WHERE Style= '" + style + "'", con);
             SqlDataReader dr = cmd.ExecuteReader();
@@ -58,34 +52,50 @@ namespace TruckShowShirts
                 string Small = (dr["Small"].ToString());
                 Small = Small.Trim();
                 StextBox.AppendText(Small);
+                Bin = (dr["BinSmall"].ToString());
+                Bin1.Text = Bin;
 
                 string Medium = (dr["Medium"].ToString());
                 Medium = Medium.Trim();
                 MtextBox.AppendText(Medium);
+                Bin = (dr["BinMed"].ToString());
+                Bin2.Text = Bin;
 
                 string Large = (dr["Large"].ToString());
                 Large = Large.Trim();
                 LtextBox.AppendText(Large);
+                Bin = (dr["BinLarge"].ToString());
+                Bin3.Text = Bin;
 
                 string XL = (dr["XL"].ToString());
                 XL = XL.Trim();
                 XLtextBox.AppendText(XL);
+                Bin = (dr["BinXL"].ToString());
+                Bin4.Text = Bin;
 
                 string twoXL = (dr["twoXL"].ToString());
                 twoXL = twoXL.Trim();
                 twoXLtextBox.AppendText(twoXL);
+                Bin = (dr["Bin2XL"].ToString());
+                Bin5.Text = Bin;
 
                 string threeXL = (dr["threeXL"].ToString());
                 threeXL = threeXL.Trim();
                 threeXLtextBox.AppendText(threeXL);
+                Bin = (dr["Bin3XL"].ToString());
+                Bin6.Text = Bin;
 
                 string fourXL = (dr["fourXL"].ToString());
                 fourXL = fourXL.Trim();
                 fourXLtextBox.AppendText(fourXL);
+                Bin = (dr["Bin4XL"].ToString());
+                Bin7.Text = Bin;
 
                 string fiveXL = (dr["fiveXL"].ToString());
                 fiveXL = fiveXL.Trim();
                 fiveXLtextBox.AppendText(fiveXL);
+                Bin = (dr["Bin5XL"].ToString());
+                Bin8.Text = Bin;
             }
             con.Close();
         }
@@ -112,7 +122,6 @@ namespace TruckShowShirts
                     sizeInput = "fiveXL";
                     break;
                 default:
-                    sizeInput = sizeInput;
                     break;
             }
             
@@ -168,7 +177,6 @@ namespace TruckShowShirts
                     sizeInput = "fiveXL";
                     break;
                 default:
-                    sizeInput = sizeInput;
                     break;
             }
 
@@ -193,6 +201,29 @@ namespace TruckShowShirts
         // Clears text on first tab
         private void ClearButton1_Click(object sender, EventArgs e)
         {
+            ClearTextboxes();
+        }
+
+        // Clears text on the second tab
+        private void ClearButton2_Click(object sender, EventArgs e)
+        {
+            ClearTextboxes();
+        }
+
+        // Clears text on the third tab
+        private void ClearButton3_Click(object sender, EventArgs e)
+        {
+            ClearTextboxes();
+        }
+
+        private void ClearTextboxes()
+        {
+            StyleComboBox2.Text = "";
+            SizeComboBox.Text = "";
+            quantityTextBox.Text = "";
+            StyleComboBox3.Text = "";
+            SizeComboBox2.Text = "";
+            quantityTextBox2.Text = "";
             StyleComboBox1.Text = "";
             StextBox.Text = "";
             MtextBox.Text = "";
@@ -202,22 +233,6 @@ namespace TruckShowShirts
             threeXLtextBox.Text = "";
             fourXLtextBox.Text = "";
             fiveXLtextBox.Text = "";
-        }
-
-        // Clears text on the second tab
-        private void ClearButton2_Click(object sender, EventArgs e)
-        {
-            StyleComboBox2.Text = "";
-            SizeComboBox.Text = "";
-            quantityTextBox.Text = "";
-        }
-
-        // Clears text on the third tab
-        private void ClearButton3_Click(object sender, EventArgs e)
-        {
-            StyleComboBox3.Text = "";
-            SizeComboBox2.Text = "";
-            quantityTextBox2.Text = "";
         }
     }
 }

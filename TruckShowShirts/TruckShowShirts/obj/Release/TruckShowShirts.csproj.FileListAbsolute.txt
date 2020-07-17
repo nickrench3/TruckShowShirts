@@ -20,3 +20,15 @@ C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowS
 C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.pdb
 C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.Register.resources
 C:\GitHub\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.csproj.CoreCompileInputs.cache
+C:\GitHubProject\TruckShowShirts\TruckShowShirts\TruckShowShirts\bin\Release\TruckShowShirts.exe.config
+C:\GitHubProject\TruckShowShirts\TruckShowShirts\TruckShowShirts\bin\Release\TruckShowShirts.exe
+C:\GitHubProject\TruckShowShirts\TruckShowShirts\TruckShowShirts\bin\Release\TruckShowShirts.pdb
+C:\GitHubProject\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.csprojAssemblyReference.cache
+C:\GitHubProject\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.Login.resources
+C:\GitHubProject\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.Register.resources
+C:\GitHubProject\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.TruckShowShirts.resources
+C:\GitHubProject\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.Properties.Resources.resources
+C:\GitHubProject\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.csproj.GenerateResource.cache
+C:\GitHubProject\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.csproj.CoreCompileInputs.cache
+C:\GitHubProject\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.exe
+C:\GitHubProject\TruckShowShirts\TruckShowShirts\TruckShowShirts\obj\Release\TruckShowShirts.pdb
