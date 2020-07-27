@@ -14,25 +14,25 @@ namespace TruckShowShirts
 {
     public partial class TruckShowShirts : Form
     {
-        private SqlConnection con = new SqlConnection("Data Source=NRENTSHLER;Initial Catalog=Test;Integrated Security=True");
+        private SqlConnection con = new SqlConnection(@"Data Source=NICKRENTSCHLER\SQLEXPRESS01;Initial Catalog=TruckShow;Integrated Security=True;Pooling=False");
         private SqlCommand cmd;
 
         // Initialize, get the username and check to see if it has Admin access.
         public TruckShowShirts()
         {
             InitializeComponent();
-            //con.Open();
-            //cmd = new SqlCommand("SELECT TOP 1 * FROM Security.dbo.LoginEventLog ORDER BY ExecutionTime desc", con);
-            //SqlDataReader dr2 = cmd.ExecuteReader();
-            //if (dr2.Read())
-            //{
-            //    string userName = (dr2["username"].ToString());
-            //    if (userName != "nickrench3")
-            //    {
-            //        tabControl1.TabPages.Remove(tabPage3);
-            //    }
-            //}
-            //con.Close();
+            con.Open();
+            cmd = new SqlCommand("SELECT TOP 1 * FROM Security.dbo.LoginEventLog ORDER BY ExecutionTime desc", con);
+            SqlDataReader dr2 = cmd.ExecuteReader();
+            if (dr2.Read())
+            {
+                string userName = (dr2["username"].ToString());
+                if (userName != "nickrench3")
+                {
+                    tabControl1.TabPages.Remove(tabPage3);
+                }
+            }
+            con.Close();
         }
 
         // First enter button to display how many shirts are available
@@ -43,7 +43,7 @@ namespace TruckShowShirts
             style = style.Trim();
 
             con.Open();
-            cmd = new SqlCommand("SELECT * FROM Test1 WHERE Style= '" + style + "'", con);
+            cmd = new SqlCommand("SELECT * FROM Shirts WHERE Style= '" + style + "'", con);
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
@@ -86,8 +86,9 @@ namespace TruckShowShirts
 
         private void BinLocation(string Style)
         {
+            ClearBins();
             con.Open();
-            cmd = new SqlCommand("SELECT * FROM Test1 t inner join TestBin tt on t.ID = tt.ShirtID WHERE Style= '" + Style + "'", con);
+            cmd = new SqlCommand("SELECT * FROM Shirts s inner join ShirtMapping sm on s.Style = sm.Style inner join ShirtBins sb on sm.ID = sb.ShirtID WHERE s.Style= '" + Style + "'", con);
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
@@ -272,11 +273,23 @@ namespace TruckShowShirts
             Bin8.Text = "";
         }
 
+        private void ClearBins()
+        {
+            Bin1.Text = "";
+            Bin2.Text = "";
+            Bin3.Text = "";
+            Bin4.Text = "";
+            Bin5.Text = "";
+            Bin6.Text = "";
+            Bin7.Text = "";
+            Bin8.Text = "";
+        }
+
         private void UpdateBin_Click(object sender, EventArgs e)
         {
             string style = StyleComboBox4.Text;
             string Bin = NewBinText.Text;
-            string Size = SizeCombo.Text;
+            string size = SizeCombo.Text;
 
             string ID = "";
 
@@ -296,12 +309,124 @@ namespace TruckShowShirts
                     break;
             }
 
+            switch (size)
+            {
+                case "Small":
+                    size = "S";
+                    break;
+                case "Medium":
+                    size = "M";
+                    break;
+                case "Large":
+                    size = "L";
+                    break;
+                default:
+                    break;
+            }
+
             con.Open();
-            cmd = new SqlCommand("UPDATE TestBin SET Bin = '"+Bin+"' WHERE Size = '"+ Size + "' and ShirtID= '" + ID + "'", con);
+            cmd = new SqlCommand("UPDATE ShirtBins SET Bin = '"+Bin+"' WHERE Size = '"+ size + "' and ShirtID= '" + ID + "'", con);
             cmd.ExecuteNonQuery();
             con.Close();
 
-            MessageBox.Show("Bin updated for " + style + " shirt, Size " + Size + "");
+            MessageBox.Show("Bin updated for " + style + " shirt, Size " + size + "");
+        }
+
+        private void Insert_Bin_Click(object sender, EventArgs e)
+        {
+            string style = StyleComboBox4.Text;
+            string Bin = NewBinText.Text;
+            string ShirtSize = SizeCombo.Text;
+
+            string ID = "";
+
+            switch (style)
+            {
+                case "Central Illinois Truck Mafia":
+                    ID = "1";
+                    break;
+                case "2nd Truck Show":
+                    ID = "2";
+                    break;
+                case "3rd Truck Show":
+                    ID = "3";
+                    break;
+                case "4th Truck Show":
+                    ID = "4";
+                    break;
+            }
+
+            switch (ShirtSize)
+            {
+                case "Small":
+                    ShirtSize = "S";
+                    break;
+                case "Medium":
+                    ShirtSize = "M";
+                    break;
+                case "Large":
+                    ShirtSize = "L";
+                    break;
+                default:
+                    break;
+            }
+
+            con.Open();
+            cmd = new SqlCommand("INSERT INTO ShirtBins Values ('"+ID+"', '"+Bin+"', '"+ShirtSize + "')", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            MessageBox.Show("Bin inserted for " + style + " shirt, Size " + ShirtSize + "");
+        }
+
+        private void SizeCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string style = StyleComboBox4.Text;
+            string size = SizeCombo.Text;
+            string ID = "";
+            string Bin = "";
+
+            switch (style)
+            {
+                case "Central Illinois Truck Mafia":
+                    ID = "1";
+                    break;
+                case "2nd Truck Show":
+                    ID = "2";
+                    break;
+                case "3rd Truck Show":
+                    ID = "3";
+                    break;
+                case "4th Truck Show":
+                    ID = "4";
+                    break;
+            }
+
+            switch (size)
+            {
+                case "Small":
+                    size = "S";
+                    break;
+                case "Medium":
+                    size = "M";
+                    break;
+                case "Large":
+                    size = "L";
+                    break;
+                default:
+                    break;
+            }
+
+            con.Open();
+            cmd = new SqlCommand("SELECT * FROM ShirtBins WHERE ShirtID= '" + ID + "' and Size = '"+size+"'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                Bin = (dr["Bin"].ToString());
+                
+            }
+            NewBinText.Text = Bin;
+            con.Close();
         }
     }
 }

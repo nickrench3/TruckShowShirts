@@ -69,6 +69,15 @@
             this.enterButton2 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.StyleComboBox2 = new System.Windows.Forms.ComboBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.Insert_Bin = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.SizeCombo = new System.Windows.Forms.ComboBox();
+            this.UpdateBin = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.NewBinText = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.StyleComboBox4 = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label14 = new System.Windows.Forms.Label();
             this.quantityTextBox2 = new System.Windows.Forms.TextBox();
@@ -78,19 +87,11 @@
             this.enterButton3 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.StyleComboBox3 = new System.Windows.Forms.ComboBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label18 = new System.Windows.Forms.Label();
-            this.StyleComboBox4 = new System.Windows.Forms.ComboBox();
-            this.NewBinText = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.UpdateBin = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.SizeCombo = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -514,6 +515,115 @@
             this.StyleComboBox2.Size = new System.Drawing.Size(220, 21);
             this.StyleComboBox2.TabIndex = 39;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.Insert_Bin);
+            this.tabPage4.Controls.Add(this.label20);
+            this.tabPage4.Controls.Add(this.SizeCombo);
+            this.tabPage4.Controls.Add(this.UpdateBin);
+            this.tabPage4.Controls.Add(this.label19);
+            this.tabPage4.Controls.Add(this.NewBinText);
+            this.tabPage4.Controls.Add(this.label18);
+            this.tabPage4.Controls.Add(this.StyleComboBox4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(859, 422);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Bin Location";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // Insert_Bin
+            // 
+            this.Insert_Bin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Insert_Bin.Location = new System.Drawing.Point(255, 231);
+            this.Insert_Bin.Name = "Insert_Bin";
+            this.Insert_Bin.Size = new System.Drawing.Size(126, 44);
+            this.Insert_Bin.TabIndex = 48;
+            this.Insert_Bin.Text = "Insert";
+            this.Insert_Bin.UseVisualStyleBackColor = true;
+            this.Insert_Bin.Click += new System.EventHandler(this.Insert_Bin_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label20.Location = new System.Drawing.Point(47, 131);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(35, 17);
+            this.label20.TabIndex = 47;
+            this.label20.Text = "Size";
+            // 
+            // SizeCombo
+            // 
+            this.SizeCombo.FormattingEnabled = true;
+            this.SizeCombo.Items.AddRange(new object[] {
+            "Small",
+            "Medium",
+            "Large",
+            "XL",
+            "2XL",
+            "3XL",
+            "4XL",
+            "5XL"});
+            this.SizeCombo.Location = new System.Drawing.Point(183, 127);
+            this.SizeCombo.MaxLength = 3;
+            this.SizeCombo.Name = "SizeCombo";
+            this.SizeCombo.Size = new System.Drawing.Size(220, 21);
+            this.SizeCombo.TabIndex = 46;
+            this.SizeCombo.SelectedIndexChanged += new System.EventHandler(this.SizeCombo_SelectedIndexChanged);
+            // 
+            // UpdateBin
+            // 
+            this.UpdateBin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.UpdateBin.Location = new System.Drawing.Point(72, 231);
+            this.UpdateBin.Name = "UpdateBin";
+            this.UpdateBin.Size = new System.Drawing.Size(126, 44);
+            this.UpdateBin.TabIndex = 45;
+            this.UpdateBin.Text = "Update";
+            this.UpdateBin.UseVisualStyleBackColor = true;
+            this.UpdateBin.Click += new System.EventHandler(this.UpdateBin_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label19.Location = new System.Drawing.Point(47, 178);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(28, 17);
+            this.label19.TabIndex = 44;
+            this.label19.Text = "Bin";
+            // 
+            // NewBinText
+            // 
+            this.NewBinText.Location = new System.Drawing.Point(183, 175);
+            this.NewBinText.Name = "NewBinText";
+            this.NewBinText.Size = new System.Drawing.Size(220, 20);
+            this.NewBinText.TabIndex = 43;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label18.Location = new System.Drawing.Point(47, 77);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(39, 17);
+            this.label18.TabIndex = 42;
+            this.label18.Text = "Style";
+            // 
+            // StyleComboBox4
+            // 
+            this.StyleComboBox4.FormattingEnabled = true;
+            this.StyleComboBox4.Items.AddRange(new object[] {
+            "Central Illinois Truck Mafia",
+            "2nd Truck Show",
+            "3rd Truck Show",
+            "4th Truck Show"});
+            this.StyleComboBox4.Location = new System.Drawing.Point(183, 73);
+            this.StyleComboBox4.Name = "StyleComboBox4";
+            this.StyleComboBox4.Size = new System.Drawing.Size(220, 21);
+            this.StyleComboBox4.TabIndex = 41;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.label14);
@@ -619,102 +729,6 @@
             this.StyleComboBox3.Size = new System.Drawing.Size(220, 21);
             this.StyleComboBox3.TabIndex = 47;
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.label20);
-            this.tabPage4.Controls.Add(this.SizeCombo);
-            this.tabPage4.Controls.Add(this.UpdateBin);
-            this.tabPage4.Controls.Add(this.label19);
-            this.tabPage4.Controls.Add(this.NewBinText);
-            this.tabPage4.Controls.Add(this.label18);
-            this.tabPage4.Controls.Add(this.StyleComboBox4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(859, 422);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Bin Location";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label18.Location = new System.Drawing.Point(47, 77);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(39, 17);
-            this.label18.TabIndex = 42;
-            this.label18.Text = "Style";
-            // 
-            // StyleComboBox4
-            // 
-            this.StyleComboBox4.FormattingEnabled = true;
-            this.StyleComboBox4.Items.AddRange(new object[] {
-            "Central Illinois Truck Mafia",
-            "2nd Truck Show",
-            "3rd Truck Show",
-            "4th Truck Show"});
-            this.StyleComboBox4.Location = new System.Drawing.Point(183, 73);
-            this.StyleComboBox4.Name = "StyleComboBox4";
-            this.StyleComboBox4.Size = new System.Drawing.Size(220, 21);
-            this.StyleComboBox4.TabIndex = 41;
-            // 
-            // NewBinText
-            // 
-            this.NewBinText.Location = new System.Drawing.Point(183, 182);
-            this.NewBinText.Name = "NewBinText";
-            this.NewBinText.Size = new System.Drawing.Size(220, 20);
-            this.NewBinText.TabIndex = 43;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label19.Location = new System.Drawing.Point(47, 185);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(59, 17);
-            this.label19.TabIndex = 44;
-            this.label19.Text = "New Bin";
-            // 
-            // UpdateBin
-            // 
-            this.UpdateBin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.UpdateBin.Location = new System.Drawing.Point(200, 230);
-            this.UpdateBin.Name = "UpdateBin";
-            this.UpdateBin.Size = new System.Drawing.Size(126, 44);
-            this.UpdateBin.TabIndex = 45;
-            this.UpdateBin.Text = "ENTER";
-            this.UpdateBin.UseVisualStyleBackColor = true;
-            this.UpdateBin.Click += new System.EventHandler(this.UpdateBin_Click);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label20.Location = new System.Drawing.Point(47, 131);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(35, 17);
-            this.label20.TabIndex = 47;
-            this.label20.Text = "Size";
-            // 
-            // SizeCombo
-            // 
-            this.SizeCombo.FormattingEnabled = true;
-            this.SizeCombo.Items.AddRange(new object[] {
-            "Small",
-            "Medium",
-            "Large",
-            "XL",
-            "2XL",
-            "3XL",
-            "4XL",
-            "5XL"});
-            this.SizeCombo.Location = new System.Drawing.Point(183, 127);
-            this.SizeCombo.MaxLength = 3;
-            this.SizeCombo.Name = "SizeCombo";
-            this.SizeCombo.Size = new System.Drawing.Size(220, 21);
-            this.SizeCombo.TabIndex = 46;
-            // 
             // TruckShowShirts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -729,10 +743,10 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -797,6 +811,7 @@
         private System.Windows.Forms.Button UpdateBin;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ComboBox SizeCombo;
+        private System.Windows.Forms.Button Insert_Bin;
     }
 }
 
